@@ -4,20 +4,14 @@ from plot_rgb import plot
 
 
 def open_image():
-    # Open the image
-    # Input path to your image here
     image_path = "path/to/your/image"
     image = Image.open(image_path)
 
-    # Convert the image to a NumPy array
     image_array = np.array(image)
-    # Get the dimensions of the image
     height, width, channels = image_array.shape
 
-    # Define the downsampling factor
     downsampling_factor = 25
 
-    # Create a NumPy array to store RGB values
     rgb_values = np.zeros(((height // downsampling_factor) + 1, (width // downsampling_factor) + 1, 3))
     height_cor = [-value for value in range(0, height, downsampling_factor)]
     width_cor = [value for value in range(0, width, downsampling_factor)]

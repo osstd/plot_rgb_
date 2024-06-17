@@ -10,14 +10,13 @@ def plot(height, width, colors, h, w):
     w = 6
     h = w / aspect_ratio
 
-    # Plotting
     fig, ax1 = plt.subplots(figsize=(w, h))
     fig2, ax2 = plt.subplots(figsize=(w, h))
     fig3, ax3 = plt.subplots(figsize=(w, h))
 
     # Scatter plot with color mapped to values
-    for i in range(len(x)):  # width horizontal
-        for j in range(len(y)):  # height vertical
+    for i in range(len(x)):
+        for j in range(len(y)):
             for k in range(3):
                 if colors[j][i][k] > 0.15:
                     if k == 0:
